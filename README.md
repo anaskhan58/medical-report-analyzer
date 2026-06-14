@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🩺 Medical Report Analyzer
 
-## Getting Started
+> Turning confusing medical reports into clear, human-readable insights — powered by AI.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![Groq](https://img.shields.io/badge/AI-Groq%20API-orange)](https://groq.com/)
+[![n8n](https://img.shields.io/badge/Automation-n8n-EA4B71?logo=n8n)](https://n8n.io/)
+[![Status](https://img.shields.io/badge/status-active%20development-yellow)]()
+
+---
+
+## 📌 Overview
+
+Medical lab reports are often filled with abbreviations, numeric ranges, and clinical terminology that the average person can't easily interpret. This creates anxiety and a barrier between patients and understanding their own health.
+
+**Medical Report Analyzer** solves this by letting users upload a lab report (PDF or image) and instantly receive a **clear, plain-language explanation** of what the results mean — built using a fast, automated AI pipeline.
+
+---
+
+## ✨ Key Features
+
+- 📄 **Flexible Uploads** — Accepts both PDF and image-based medical reports
+- 🤖 **AI-Driven Interpretation** — Reports are processed through an automated **n8n workflow** and analyzed using the **Groq API**
+- ⚡ **Near-Instant Results** — Groq's high-speed LLM inference delivers explanations in seconds
+- 🧠 **Plain-Language Output** — Converts complex medical jargon into simple, understandable summaries
+- 🔄 **Decoupled Architecture** — Frontend and AI processing are connected via automated workflows, making the system easy to extend or swap components
+
+---
+
+## 🏗️ How It Works
+
+```
+User uploads report (PDF/Image)
+        ↓
+   Next.js Frontend
+        ↓
+   n8n Workflow (orchestration)
+        ↓
+   Groq API (AI analysis)
+        ↓
+Plain-language summary returned to user
+```
+
+This architecture keeps the **AI logic decoupled from the frontend**, making it easy to update prompts, swap models, or extend the workflow (e.g., add OCR, multi-report comparison, or notifications) without touching the core app.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | [Next.js 14](https://nextjs.org/) (App Router, TypeScript) |
+| Workflow Automation | [n8n](https://n8n.io/) |
+| AI Inference | [Groq API](https://groq.com/) |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- An active **n8n** instance with a configured workflow endpoint
+- A **Groq API key**
+
+### Installation
+
+```bash
+git clone https://github.com/anaskhan58/medical-report-analyzer.git
+cd medical-report-analyzer
+npm install
+```
+
+### Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to use the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file and add:
 
-## Learn More
+```env
+GROQ_API_KEY=your_groq_api_key
+N8N_WEBHOOK_URL=your_n8n_workflow_endpoint
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🗺️ Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] Deploy live demo on Vercel
+- [ ] Add OCR support for scanned/handwritten reports
+- [ ] Highlight abnormal values directly in the summary
+- [ ] Support multi-report history & comparison
+- [ ] Add authentication for saved report history
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Project Status
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔧 Actively in development — currently running locally, with deployment on **Vercel** planned next.
+
+---
+
+## 🧑‍💻 About the Author
+
+Built by **Anas Khan**, a Biomedical Engineering student exploring the intersection of healthcare and AI/ML — combining domain knowledge with practical software engineering to build tools that make health information more accessible.
+
+- GitHub: [@anaskhan58](https://github.com/anaskhan58)
+
+---
+
+## 📄 License
+
+This project is open source and available for learning, demonstration, and portfolio purposes.
