@@ -4,7 +4,7 @@
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js) ![Groq](https://img.shields.io/badge/AI-Groq%20API-orange) ![n8n](https://img.shields.io/badge/Automation-n8n-EA4B71) ![Status](https://img.shields.io/badge/status-active%20development-yellow)
 
-**🔗 Live Demo:** *Coming soon — deployment in progress*
+**🔗 Live Demo:** (https://medical-report-analyzer-alpha.vercel.app/)
 
 ---
 
