@@ -241,7 +241,7 @@ export default function Home() {
     try {
       const formData = new FormData()
       formData.append('file', file)
-      const res = await fetch('https://anaskhan59.app.n8n.cloud/webhook/analyze', {
+      const res = await fetch('/api/analyze', {
         method: 'POST',
         body: formData,
       })
